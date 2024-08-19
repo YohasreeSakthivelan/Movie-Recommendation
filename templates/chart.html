@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <link rel="shortcut icon" href="../static/images/favicon.png" type="image/x-icon">
+
+  <title>Login</title>
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.css" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,600,700&display=swap" rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+  <link href="../static/css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="../static/css/responsive.css" rel="stylesheet" />
+  <link href="../static/css/chart.css" rel="stylesheet" />
+
+
+
+</head> 
+<style>
+
+        .background-image {
+            background-image: url('../static/images/chart1..jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 5%; /* Adjust 50px as per your navbar height */
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1; /* Ensure it stays behind other elements */
+        }
+</style>
+<body class="sub_page">
+  <div class="hero_area">
+    <!-- header section strats -->
+    <div class="hero_bg_box1">
+      <div class="background-image">
+       
+      </div>
+    </div>
+
+    <header class="header_section">
+      <div class="header_top">
+        <div class="container-fluid">
+          <div class="contact_link-container">
+          
+          </div>
+        </div>
+      </div>
+      <div class="header_bottom">
+        <div class="container-fluid">
+          <nav class="navbar navbar-expand-lg custom_nav-container">
+            <a class="navbar-brand" href="chart.html">
+              <span>
+                Chart
+              </span>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class=""></span>
+            </button>
+
+            <div class="collapse navbar-collapse ml-auto" id="navbarSupportedContent">
+              <ul class="navbar-nav  ">
+                <li class="nav-item ">
+                  <a class="nav-link" href="{{url_for('index')}}"> Home </a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="{{url_for('login')}}"> Login </a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="{{url_for('upload')}}"> Upload </a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="{{url_for('predict')}}"> Predict</a>
+                  </li>
+                  <li class="nav-item active">
+                    <a class="nav-link" href="{{url_for('chart')}}"> Chart</a>
+                  </li>
+                
+                
+
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+
+    </header>
+    <body>
+      
+
+  <!-- Page Header End -->
+  <h2 style="font-weight: bold; text-align: center;"></h2>
+  
+  <!-- Service Start -->
+  <div class="container-xxl py-5">
+      <div class="container">
+          
+          
+          <html>
+              <head>
+                 <script type = "text/javascript" src = "https://www.gstatic.com/charts/loader.js">
+                 </script>
+                 <script type = "text/javascript">
+                    google.charts.load('current', {packages: ['corechart']});     
+                 </script>
+              </head>
+              
+              <body>
+                <br>
+                <br>
+                <br>
+                <h2 style="font-weight: bold; text-align: center;">Mean Asolute Error Between Training And Test Data</h2>
+                <br>
+                 <div id = "container" style = "width: 550px; height: 400px; margin: 0 auto">
+                 </div>
+                 <script language = "JavaScript">
+                    function drawChart() {
+                       // Define the chart to be drawn.
+                       var data = google.visualization.arrayToDataTable([
+                          ['Model', 'Training Set Mean Absolute Error:','Test Set Mean Absolute Error'],
+                          ['Stacking Regressor', 40.0859, 105.7218],
+                          ['GradientBoosting',  0.5434,1.4992]
+                        
+                       ]);
+           
+                       var options = {title: ' Mean Absolute Error'}; 
+           
+                       // Instantiate and draw the chart.
+                       var chart = new google.visualization.BarChart(document.getElementById('container'));
+                       chart.draw(data, options);
+                    }
+                    google.charts.setOnLoadCallback(drawChart);
+                 </script>
+                   <h2 style="font-weight: bold; text-align: center;">Correlation Map</h2>
+                   <br>
+                   <div style="position: relative; height: 300px;">
+                    <img src="../static/images/correlationn map.jpg" alt="Image" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+                  </div>
+                  <br>
+                  <br>
+                  <h2 style="font-weight: bold; text-align: center;">Plot </h2>
+                  <br>
+                  <br>
+                  <br>
+                  <div style="position: relative; height: 300px;">
+                    <img src="../static/images/output1.png" alt="Image" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); ">
+                  </div>
+              </body>
+           </html>
+  
+             
+  
+          </div>
+      </div>
+      <!-- Service End -->
+  
+
+  
+      <!-- Testimonial Start -->
+     
+  
+  
+  
+    
+
+
+
+
+ 
+
+  <script src="../static/js/jquery-3.4.1.min.js"></script>
+  <script src="../static/js/bootstrap.js"></script>
+  <script src="../static/js/custom.js"></script>
+</body>
+
+</html>
